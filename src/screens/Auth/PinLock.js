@@ -185,9 +185,9 @@ const styles = StyleSheet.create({
   },
   pinButton: {
     backgroundColor: '#DADADA',
-    width: 64,
-    height: 64,
-    borderRadius: 64,
+    width: 72,
+    height: 72,
+    borderRadius: 72,
     justifyContent: 'center',
     alignItems: 'center',
   },

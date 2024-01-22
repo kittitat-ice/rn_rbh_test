@@ -1,7 +1,15 @@
 /* eslint-disable prettier/prettier */
 const th = {
   hello: 'สวัสดี',
-  encourage: "ขอให้วันนี้มีแต่สิ่งดีๆเข้ามา!",
+  encourage: 'ขอให้วันนี้เจอแต่สิ่งที่ดี',
+  goodmorning: 'อรุณสวัสดิ์',
+  goodafternoon: 'สวัสดีตอนบ่าย',
+  goodevening: 'สวัสดีตอนเย็น',
+  goodnight: 'ราตรีสวัสดิ์',
+  morning_encourage: 'ขอให้วันนี้เจอแต่สิ่งที่ดี',
+  afternoon_encourage: 'กินข้าวแล้วไปลุยกันต่อ',
+  evening_encourage: 'ไปเที่ยวไหนกันดี',
+  night_encourage: 'พักผ่อนให้เต็มที่',
   switch_language: 'Change Language',
   delete: 'Delete',
   todo: 'ต้องทำ',

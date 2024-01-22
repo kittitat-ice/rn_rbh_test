@@ -16,12 +16,10 @@ import DoingList from '../components/Home/DoingList';
 import DoneList from '../components/Home/DoneList';
 import {useDispatch, useSelector} from 'react-redux';
 import {setIsLogin} from '../redux/slices/authSlice';
-import {selectUtilReducer} from '../redux/slices/utilSlice';
 
 const Home = props => {
   const {t} = useTranslation();
   const dispatch = useDispatch();
-  const {currRouteName} = useSelector(selectUtilReducer);
   const appState = useRef(AppState.currentState);
   const [activeTab, setActiveTab] = useState(0);
   const [tabHeight, setTabHeight] = useState(0);
@@ -59,69 +57,69 @@ const Home = props => {
 
   return (
     <>
-      <SafeAreaView style={styles.safeArea}>
-        <StatusBar
-          backgroundColor={appColors.primaryColor}
-          animated
-          barStyle={'light-content'}
-        />
-        <View style={styles.container}>
-          <TopSection />
-          <View style={{zIndex: 1}}>
-            <View
-              style={[styles.tabContainer, {marginTop: -tabHeight / 2}]}
-              onLayout={({nativeEvent}) =>
-                setTabHeight(nativeEvent.layout.height)
-              }>
-              <TouchableOpacity
-                onPress={() => setActiveTab(0)}
-                style={[styles.tab, activeTab === 0 && styles.tabActive]}>
-                <Text
-                  style={
-                    activeTab === 0
-                      ? styles.tabTextActive
-                      : styles.tabTextInactive
-                  }>
-                  {t('todo')}
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => setActiveTab(1)}
-                style={[styles.tab, activeTab === 1 && styles.tabActive]}>
-                <Text
-                  style={
-                    activeTab === 1
-                      ? styles.tabTextActive
-                      : styles.tabTextInactive
-                  }>
-                  {t('doing')}
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => setActiveTab(2)}
-                style={[styles.tab, activeTab === 2 && styles.tabActive]}>
-                <Text
-                  style={
-                    activeTab === 2
-                      ? styles.tabTextActive
-                      : styles.tabTextInactive
-                  }>
-                  {t('done')}
-                </Text>
-              </TouchableOpacity>
-            </View>
+      {/* <SafeAreaView style={styles.safeArea}> */}
+      <StatusBar
+        // backgroundColor={appColors.primaryColor}
+        animated
+        barStyle={'light-content'}
+      />
+      <View style={styles.container}>
+        <TopSection />
+        <View style={{zIndex: 1}}>
+          <View
+            style={[styles.tabContainer, {marginTop: -tabHeight / 2}]}
+            onLayout={({nativeEvent}) =>
+              setTabHeight(nativeEvent.layout.height)
+            }>
+            <TouchableOpacity
+              onPress={() => setActiveTab(0)}
+              style={[styles.tab, activeTab === 0 && styles.tabActive]}>
+              <Text
+                style={
+                  activeTab === 0
+                    ? styles.tabTextActive
+                    : styles.tabTextInactive
+                }>
+                {t('todo')}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setActiveTab(1)}
+              style={[styles.tab, activeTab === 1 && styles.tabActive]}>
+              <Text
+                style={
+                  activeTab === 1
+                    ? styles.tabTextActive
+                    : styles.tabTextInactive
+                }>
+                {t('doing')}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setActiveTab(2)}
+              style={[styles.tab, activeTab === 2 && styles.tabActive]}>
+              <Text
+                style={
+                  activeTab === 2
+                    ? styles.tabTextActive
+                    : styles.tabTextInactive
+                }>
+                {t('done')}
+              </Text>
+            </TouchableOpacity>
           </View>
-          {activeTab === 0 ? (
-            <TodoList />
-          ) : activeTab === 1 ? (
-            <DoingList />
-          ) : activeTab === 2 ? (
-            <DoneList />
-          ) : (
-            <></>
-          )}
         </View>
-      </SafeAreaView>
+        {activeTab === 0 ? (
+          <TodoList />
+        ) : activeTab === 1 ? (
+          <DoingList />
+        ) : activeTab === 2 ? (
+          <DoneList />
+        ) : (
+          <></>
+        )}
+      </View>
+      {/* </SafeAreaView> */}
       <SafeAreaView style={styles.bottomSafeArea} />
     </>
   );

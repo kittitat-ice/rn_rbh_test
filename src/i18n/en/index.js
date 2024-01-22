@@ -2,12 +2,19 @@
 const en = {
   hello: 'Hello',
   encourage: "let's have a great day!",
+  goodmorning: 'Good morning',
+  goodafternoon: 'Good afternoon',
+  goodevening: 'Good evening',
+  goodnight: 'Goodnight',
+  morning_encourage: "let's have a great day!",
+  afternoon_encourage: "let's have something tasty!",
+  evening_encourage: "let's do something fun!",
+  night_encourage: 'time to relax',
   switch_language: 'Change Language',
   delete: 'Delete',
   todo: 'To-do',
   doing: 'Doing',
   done: 'Done',
-
 
   pin_reset: 'Reset PIN Code',
   pin_setting: 'Please set your PIN Code.',
