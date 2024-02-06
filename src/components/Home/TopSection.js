@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  ImageBackground,
-  Platform,
-} from 'react-native';
+import {Text, StyleSheet, ImageBackground, Platform} from 'react-native';
 import {useSelector} from 'react-redux';
 import {appColors} from '../../const';
 import Avatar from '../common/Avatar';
@@ -123,8 +116,7 @@ const styles = StyleSheet.create({
     borderBottomStartRadius: 24,
   },
   imageStyle: {
-    borderBottomEndRadius: 24,
-    borderBottomStartRadius: 24,
+    borderRadius: 24,
   },
   textLang: {
     color: 'white',
